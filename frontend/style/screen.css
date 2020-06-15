@@ -1,0 +1,1524 @@
+.ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: #f12711;
+  /* Control the thikness of your lines */
+  stroke-width: 1px;
+}
+
+.ct-series-a .ct-area {
+  /* Set the colour of this series line */
+  background-color: black;
+}
+
+.ct-chart .ct-label.ct-horizontal {
+  text-align: center;
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+/*
+  Generic: Page
+  ---
+  Global page styles + universal box-sizing:
+*/
+html {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 400;
+  color: black;
+  font-family: 'Roboto', arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+::-moz-selection {
+  background: #0053fb;
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: #0053fb;
+  color: white;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+/*
+  Elements: Images
+  ---
+  Default markup for images to make them responsive
+*/
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+  Elements: typography
+  ---
+  Default markup for typographic elements
+*/
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 48px;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol {
+  padding-left: 24px;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: normal;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  color: #1195f7;
+  transition: all 0.1s ease-in-out;
+}
+
+a:visited,
+a:active,
+a:hover,
+a:focus {
+  color: #8ec7ff;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+/*
+  Objects: Row
+  ---
+  Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+.o-row {
+  overflow: auto;
+  position: relative;
+  padding: 24px 16px 0px;
+}
+
+.o-row--header {
+  padding: 9px 16px;
+  background: linear-gradient(45deg, rgba(71, 118, 230, 1) 0%, rgba(142, 84, 233, 1) 100%);
+}
+
+.o-row--home {
+  background-color: hsla(0, 0%, 81%, 0.3);
+  border-radius: 40px 40px 0px 0px;
+}
+
+/* size modifiers */
+.o-row--lg {
+  padding: 48px 24px 24px;
+  height: 48px;
+}
+
+@media (min-width: 768px) {
+  .o-row {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .o-row--md {
+    padding-top: 48px;
+    padding-bottom: 24px;
+  }
+
+  .o-row--lg {
+    padding-top: 72px;
+    padding-bottom: 48px;
+  }
+  .o-row--header {
+    padding: 9px 16px;
+    background: transparent;
+  }
+}
+
+/*
+  Objects: Container
+  ---
+  Creates a horizontal container that sets de global max-width
+*/
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 71em;
+  /* 71 * 18px = 1278px */
+}
+
+@media (min-width: 768px) {
+  .o-container {
+    max-width: 27em;
+  }
+}
+
+@media (min-width: 992px) {
+  .o-container {
+    max-width: 52em;
+  }
+}
+
+/*
+  Objects: section
+  ---
+  Creates vertical whitespace between adjacent sections inside a row
+*/
+.o-section {
+  overflow-x: hidden;
+}
+
+.o-section + .o-section {
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .o-section--lg + .o-section--lg,
+  .o-section--xl + .o-section--xl {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .o-section--xl + .o-section--xl {
+    margin-top: 72px;
+  }
+}
+
+/*
+  Objects: Layout
+  ---
+  The layout object provides us with a column-style layout system. This object
+  contains the basic structural elements, but classes should be complemented
+  with width utilities
+*/
+.o-layout {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.o-layout__item {
+  width: 100%;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+.o-layout--gutter {
+  margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+  margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+  padding: 0 6px;
+}
+
+.o-layout--gutter-md {
+  margin: 0 -8px;
+}
+
+.o-layout--gutter-md > .o-layout__item {
+  padding: 0 8px;
+}
+
+.o-layout--gutter-lg {
+  margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+  padding: 0 24px;
+}
+
+/* reverse horizontal row modifier */
+.o-layout--row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+.o-layout--justify-start {
+  justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+  justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+  justify-content: center;
+}
+
+.o-layout--justify-space-around {
+  justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+  justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+.o-layout--align-start {
+  align-items: flex-start;
+}
+
+.o-layout--align-end {
+  align-items: flex-end;
+}
+
+.o-layout--align-center {
+  align-items: center;
+}
+
+.o-layout--align-baseline {
+  align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+.o-layout--align-content-start {
+  align-content: start;
+}
+
+.o-layout--align-content-end {
+  align-content: end;
+}
+
+.o-layout--align-content-center {
+  align-content: center;
+}
+
+.o-layout--align-content-space-around {
+  align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+  align-content: space-between;
+}
+
+/*
+  Objects: List
+  ---
+  Small reusable object to remove default list styling from lists
+*/
+.o-list {
+  list-style: none;
+  padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+/*
+/*
+  Component: header
+  ---
+  Main header of the website
+*/
+
+.c-header {
+  position: relative;
+}
+
+.c-header__title {
+  text-align: center;
+}
+
+.c-header__mobile-nav-trigger,
+.c-header__back-button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+.c-header__add-button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translate(50%, -50%);
+  z-index: 99;
+}
+
+@media (min-width: 768px) {
+  .c-header__mobile-nav-trigger {
+    display: none;
+  }
+  .c-header__back-button {
+    left: 48px;
+  }
+  .c-header__add-button {
+    right: 48px;
+  }
+}
+
+/*
+Component logo
+*/
+.c-logo {
+  height: 32px;
+}
+
+.c-logo__symbol {
+  height: 100%;
+}
+
+/*
+  Component: Nav
+  ---
+  Main navigation of the site
+*/
+.c-nav {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.c-nav__link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin: 12px 0 24px;
+  width: max-content;
+}
+
+.c-nav__icon {
+  margin-right: 32px;
+  fill: #6b6b6b;
+}
+
+.c-nav__icon--active {
+  fill: #4776e6;
+}
+
+.c-nav-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  width: 24px;
+  height: 24px;
+}
+
+.c-nav-trigger:focus {
+  outline: none;
+}
+
+.c-nav-trigger__svg {
+  fill: white;
+  height: 100%;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+  color: #6b6b6b;
+}
+
+.c-nav__link:hover,
+.c-nav__link:focus {
+  color: #6b6b6b;
+}
+
+@media (min-width: 768px) {
+  /* .c-nav__list {
+    display: flex;
+    align-items: center;
+  } */
+
+  .c-nav__link {
+    padding: 8px 16px;
+  }
+}
+
+.c-nav__link--active,
+.c-nav__link--active:visited,
+.c-nav__link--active:active {
+  color: #4776e6;
+}
+
+/*
+    Component: Lead
+    ---
+    Lead type treatments to style everything that differs from standard typography elements
+*/
+
+.c-lead {
+  position: relative;
+}
+
+.c-lead--sm {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.c-lead--md {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.c-lead--lg {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.c-lead--xl {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.c-lead--xxl {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.c-lead--settings {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+}
+
+.c-lead--day {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+}
+
+.c-lead--white {
+  color: white;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+/*
+  Component: width
+*/
+.c-width {
+  max-width: 32em;
+}
+
+/*
+  Component: button
+*/
+
+.c-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-image: linear-gradient(to right, #0053fb 0%, #033aa7 51%, #0053fb 100%);
+  padding: 16px 30px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  box-shadow: 0px 0px 10px 0px rgba(17, 149, 255, 0.3);
+}
+
+.c-btn--nav {
+  padding: 16px 33px;
+  margin-left: 16px;
+}
+
+.c-btn:visited {
+  color: white;
+}
+
+.c-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+/*
+  Component: figure
+*/
+
+.c-background {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  height: 0%;
+  width: 0%;
+  z-index: -2;
+}
+
+@media (min-width: 768px) {
+  .c-background {
+    position: absolute;
+    height: 170px;
+    min-width: 100%;
+    max-width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+}
+
+/*
+  Component: figure
+*/
+
+.c-figure {
+  position: relative;
+}
+
+.c-figure__desc {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  margin-top: 0px;
+  padding: 12px 12px 12px 20px;
+  max-width: 232px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #231f20;
+  border-right: 5px solid #5051db;
+  background-color: white;
+}
+
+/*
+    Component: card
+    ---
+    Information card
+*/
+
+.c-card {
+  padding: 0px 16px;
+  margin-bottom: 8px;
+  height: 108px;
+  background: linear-gradient(45deg, rgba(71, 118, 230, 1) 0%, rgba(142, 84, 233, 1) 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.c-card__text {
+  font-size: 36px;
+  line-height: 54px;
+  color: white;
+}
+
+.c-card--temperature {
+  background: linear-gradient(135deg, rgba(245, 175, 25, 1) 0%, rgba(241, 39, 17, 1) 100%);
+}
+
+.c-card--humidity {
+  background: linear-gradient(45deg, rgba(51, 84, 163, 1) 0%, rgba(151, 179, 247, 1) 100%);
+}
+
+@media (min-width: 576px) {
+  .c-card--temperature {
+    padding-right: 8px;
+  }
+  .c-card--humidity {
+    padding-left: 8px;
+  }
+}
+
+/*
+    Component: notification
+    ---
+    Styling for notifications
+*/
+
+.c-notification {
+  background-color: #e8e8e8;
+  border-radius: 5px;
+  padding: 10px 16px;
+  margin-bottom: 8px;
+}
+
+/*
+    Component: device
+    ---
+    Styling for notifications
+*/
+
+.c-device {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+/*
+    Component: Alarm
+    ---
+    Alarm component
+*/
+
+.c-alarm {
+  background-color: #cfcfcf;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+/*
+  Component: Day
+  ---
+  Clickable day selection button
+*/
+
+.c-day {
+  cursor: poiner;
+  color: white;
+  background-color: #97b3f7;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-day--active {
+  background-color: #4776e6;
+}
+
+.c-day:hover {
+  color: white;
+}
+/*
+    Component: Switch
+    ---
+    Switch button 
+*/
+
+.c-switch {
+  position: relative;
+  display: inline-block;
+  width: 72px;
+  height: 34px;
+}
+
+.c-switch__slider {
+  position: absolute;
+  /* cursor: pointer; */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e8e8e8;
+  border-radius: 40px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.c-switch__label {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.c-switch__slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #cfcfcf;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .c-switch__slider {
+  background-color: #2196f3;
+}
+
+input:focus + .c-switch__slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .c-switch__slider:before {
+  -webkit-transform: translateX(36px);
+  -ms-transform: translateX(36px);
+  transform: translateX(36px);
+}
+
+/*
+    Component: Input
+    ---
+    Input field styles
+*/
+
+.c-input-number {
+  background-color: #e8e8e8;
+  border-radius: 25px;
+  border: 1px solid #adadad;
+  padding: 12px 16px;
+  max-width: 83px;
+}
+
+/*
+    Component: Button
+    ---
+    Button styles
+*/
+
+.c-button {
+  background-color: #424242;
+  padding: 8px 40px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*
+    Component: profile
+    ---
+    Profile information on home screen
+*/
+
+.c-profile {
+  display: flex;
+  align-items: center;
+}
+
+.c-profile--nav {
+  display: flex;
+}
+
+.c-profile__picture {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  background: url('../images/personal_picture.jpg') no-repeat center center;
+  background-size: 100%;
+  margin-right: 24px;
+}
+
+/*
+    Component: Mobile Nav
+    ---
+    Dedicated mobile nav component
+*/
+
+.c-mobile-nav {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.c-mobile-nav__svg {
+  display: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  min-width: 100%;
+  max-width: 100%;
+  height: 192px;
+  opacity: 100%;
+}
+
+.has-mobile-nav .c-mobile-nav {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.c-mobile-nav__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.c-mobile-nav__bg {
+  opacity: 0;
+  transition: opacity ease-in-out 0.35s;
+}
+
+.has-mobile-nav .c-mobile-nav__bg {
+  opacity: 0.5;
+}
+
+.c-mobile-nav__body {
+  padding: 52px 16px;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  background-color: white;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  transition: transform 1.25s;
+}
+
+.has-mobile-nav .c-mobile-nav__body {
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+@media (min-width: 768px) {
+  .c-mobile-nav {
+    overflow: auto;
+    position: relative;
+    height: 100vh;
+    width: 35%;
+    opacity: 1;
+    pointer-events: auto;
+    transition: unset;
+  }
+
+  .c-mobile-nav__body {
+    padding: 52px 16px;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: transparent;
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+    transition: unset;
+  }
+
+  .c-mobile-nav__bg {
+    opacity: 100%;
+    transition: unset;
+  }
+
+  .c-mobile-nav__svg {
+    opacity: 0%;
+  }
+}
+
+/*
+    Component: Page
+    ---
+    Page movement
+*/
+
+.has-mobile-nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.c-page-main {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .c-page {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .c-page-main {
+    width: 65%;
+  }
+
+  .has-mobile-nav {
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+/*
+  Utilities: color
+  ---
+  Utility classes to put specific colors onto elements
+*/
+
+.u-color-white {
+  color: white;
+  fill: white;
+}
+
+.u-color-primary-dark {
+  color: #4a4a4a;
+}
+
+.u-color-secondary-dark {
+  color: #404040;
+}
+
+.u-color-tertiary-dark {
+  color: #1c1c1c;
+}
+
+/*
+  Utilities: inline-block
+  ---
+  Make specific elements an inline block
+*/
+
+.u-inline-block {
+  display: inline-block !important;
+}
+
+/*
+  Utilities: spacing
+  ---
+  Utility classes to put specific margins and paddings onto elements
+*/
+.u-pt-clear {
+  padding-top: 0 !important;
+}
+
+.u-mb-clear {
+  margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+  margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+  margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+  margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+  margin-bottom: 24px !important;
+}
+
+.u-mb-xl {
+  margin-bottom: 32px !important;
+}
+
+.u-mb-profile-nav {
+  margin-bottom: 104px !important;
+}
+
+.u-mb-header {
+  margin-bottom: 12px !important;
+}
+
+.u-mr-lg {
+  margin-right: 16px;
+}
+
+/*
+  Utilities: max-width
+  ---
+  Utility classes to put specific max widths onto elements
+*/
+.u-max-width-xs {
+  max-width: 18em !important;
+}
+
+.u-max-width-sm {
+  max-width: 32em !important;
+}
+
+.u-max-width-md {
+  max-width: 42em !important;
+}
+
+.u-max-width-lg {
+  max-width: 60em !important;
+}
+
+.u-max-width-xl {
+  max-width: 70em !important;
+}
+
+.u-max-width-none {
+  max-width: none !important;
+}
+
+/*
+  Utilities: Text-align
+  ---
+  Utility classes to put specific colors onto elements
+*/
+
+.u-text-align-center {
+  justify-self: center;
+}
+
+/*
+  Utility: Widths
+  ---
+  Utility classes to put specific widths onto elements
+  Will be mostly used on o-layout__item
+*/
+.u-width-auto {
+  width: auto !important;
+}
+
+.u-1-of-2 {
+  width: 50% !important;
+}
+
+.u-1-of-3 {
+  width: 33.3333333333% !important;
+}
+
+.u-2-of-3 {
+  width: 66.6666666667% !important;
+}
+
+.u-1-of-4 {
+  width: 25% !important;
+}
+
+.u-3-of-4 {
+  width: 75% !important;
+}
+
+.u-1-of-5 {
+  width: 20% !important;
+}
+
+.u-2-of-5 {
+  width: 40% !important;
+}
+
+.u-3-of-5 {
+  width: 60% !important;
+}
+
+.u-4-of-5 {
+  width: 80% !important;
+}
+
+.u-1-of-6 {
+  width: 16.6666666667% !important;
+}
+
+.u-5-of-6 {
+  width: 83.3333333333% !important;
+}
+
+@media (min-width: 576px) {
+  .u-1-of-2-bp1 {
+    width: 50% !important;
+  }
+
+  .u-1-of-3-bp1 {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp1 {
+    width: 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp1 {
+    width: 25% !important;
+  }
+
+  .u-3-of-4-bp1 {
+    width: 75% !important;
+  }
+
+  .u-1-of-5-bp1 {
+    width: 20% !important;
+  }
+
+  .u-2-of-5-bp1 {
+    width: 40% !important;
+  }
+
+  .u-3-of-5-bp1 {
+    width: 60% !important;
+  }
+
+  .u-4-of-5-bp1 {
+    width: 80% !important;
+  }
+
+  .u-1-of-6-bp1 {
+    width: 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp1 {
+    width: 83.3333333333% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-1-of-2-bp2 {
+    width: 50% !important;
+  }
+
+  .u-1-of-3-bp2 {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp2 {
+    width: 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp2 {
+    width: 25% !important;
+  }
+
+  .u-3-of-4-bp2 {
+    width: 75% !important;
+  }
+
+  .u-1-of-5-bp2 {
+    width: 20% !important;
+  }
+
+  .u-2-of-5-bp2 {
+    width: 40% !important;
+  }
+
+  .u-3-of-5-bp2 {
+    width: 60% !important;
+  }
+
+  .u-4-of-5-bp2 {
+    width: 80% !important;
+  }
+
+  .u-1-of-6-bp2 {
+    width: 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp2 {
+    width: 83.3333333333% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .u-1-of-2-bp3 {
+    width: 50% !important;
+  }
+
+  .u-1-of-3-bp3 {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp3 {
+    width: 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp3 {
+    width: 25% !important;
+  }
+
+  .u-3-of-4-bp3 {
+    width: 75% !important;
+  }
+
+  .u-1-of-5-bp3 {
+    width: 20% !important;
+  }
+
+  .u-2-of-5-bp3 {
+    width: 40% !important;
+  }
+
+  .u-3-of-5-bp3 {
+    width: 60% !important;
+  }
+
+  .u-4-of-5-bp3 {
+    width: 80% !important;
+  }
+
+  .u-1-of-6-bp3 {
+    width: 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp3 {
+    width: 83.3333333333% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .u-1-of-2-bp4 {
+    width: 50% !important;
+  }
+
+  .u-1-of-3-bp4 {
+    width: 33.3333333333% !important;
+  }
+
+  .u-2-of-3-bp4 {
+    width: 66.6666666667% !important;
+  }
+
+  .u-1-of-4-bp4 {
+    width: 25% !important;
+  }
+
+  .u-3-of-4-bp4 {
+    width: 75% !important;
+  }
+
+  .u-1-of-5-bp4 {
+    width: 20% !important;
+  }
+
+  .u-2-of-5-bp4 {
+    width: 40% !important;
+  }
+
+  .u-3-of-5-bp4 {
+    width: 60% !important;
+  }
+
+  .u-4-of-5-bp4 {
+    width: 80% !important;
+  }
+
+  .u-1-of-6-bp4 {
+    width: 16.6666666667% !important;
+  }
+
+  .u-5-of-6-bp4 {
+    width: 83.3333333333% !important;
+  }
+}
+
+.u-hide {
+  display: none;
+}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+/*
+  Media Queries
+  ---
+  EXAMPLE Media Queries for Responsive Design.
+  These examples override the primary ('mobile first') styles.
+  USE THEM INLINE!
+*/
+/* Extra small devices (portrait phones, less than 576px)
+ No media query since this is the default in mobile first design
+*/
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+/*
+  Print styles.
+  ---
+  Inlined to avoid the additional HTTP request:
+  http://www.phpied.com/delay-loading-your-print-css/
+*/
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+                                 http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
+
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

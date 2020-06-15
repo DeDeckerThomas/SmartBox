@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SmartBox - Alarms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/normalize.css" />
+    <link rel="stylesheet" href="./style/screen.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="./script/alarms.js"></script>
+    <script src="./script/navigation.js"></script>
+    <script src="./script/dataHandler.js"></script>
+  </head>
+
+  <body>
+    <svg class="c-background" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1921.41 265.6">
+      <defs>
+        <style>
+          .cls-10 {
+            fill: url(#linear-gradient);
+          }
+        </style>
+        <linearGradient id="linear-gradient" x1="104.82" y1="66.87" x2="1874.15" y2="187.71" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#4776e6" />
+          <stop offset="1" stop-color="#8e54e9" />
+        </linearGradient>
+      </defs>
+      <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1"><path class="cls-10" d="M1921.24,0H0V233.25c29.79,6.3,58.6,11.48,80,15.87,75,11.87,264.32,50.77,450.95-58.6C654.94,116,778.81,78.07,908.52,78.78c204.12,0,987.45.15,1012.89-.12,0,0-.17-26.85-.17-33V0Z" /></g>
+      </g>
+    </svg>
+    <section class="c-page">
+      <section class="c-page-main">
+        <header class="o-row o-row--header">
+          <div class="o-container">
+            <div class="c-header o-layout o-layout--align-center o-layout--justify-center">
+              <div class="c-header__mobile-nav-trigger">
+                <button class="o-button-reset c-nav-trigger js-toggle-nav">
+                  <svg class="c-nav-trigger__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                  </svg>
+                </button>
+              </div>
+              <h1 class="c-header__title c-lead c-lead--xl c-lead--white u-mb-clear">Alarms</h1>
+              <svg class="c-header__add-button u-color-white js-add" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+              </svg>
+            </div>
+          </div>
+        </header>
+        <section class="o-row">
+          <div class="o-container js-alarms"></div>
+        </section>
+      </section>
+      <aside class="c-mobile-nav">
+        <div class="c-mobile-nav__body">
+          <svg class="c-mobile-nav__svg" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 360 195.38">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: url(#linear-gradient);
+                }
+              </style>
+              <linearGradient id="linear-gradient" x1="420.23" y1="151.32" x2="-35.56" y2="21.05" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#8e54e9" />
+                <stop offset="0.78" stop-color="#566fe7" />
+                <stop offset="1" stop-color="#4776e6" />
+              </linearGradient>
+            </defs>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M0,163.15c16.46,6,32.74,10.8,44.49,14.82,37.26,9.81,140.29,52.69,224.13-48.45C309,80.77,337.62,58.65,360,48.75V0H0Z" /></g>
+            </g>
+          </svg>
+          <div class="c-profile u-mb-profile-nav">
+            <div class="c-profile__picture"></div>
+            <div>
+              <p class="c-lead--md u-color-white u-mb-clear">Thomas De Decker</p>
+            </div>
+            <svg class="u-color-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
+          </div>
+          <div class="c-mobile-nav__nav c-mobile-nav__nav--main">
+            <nav class="c-nav">
+              <ul class="o-list c-nav__list">
+                <li class="c-nav__item">
+                  <a href="./index.html" class="c-nav__link">
+                    <svg class="c-nav__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </svg>
+                    Home
+                  </a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="./thermostat.html" class="c-nav__link">
+                    <svg class="c-nav__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z" />
+                    </svg>
+                    Thermostat
+                  </a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="./alarms.html" class="c-nav__link c-nav__link--active">
+                    <svg class="c-nav__icon c-nav__icon--active" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path d="M22 5.72l-4.6-3.86-1.29 1.53 4.6 3.86L22 5.72zM7.88 3.39L6.6 1.86 2 5.71l1.29 1.53 4.59-3.85zM12.5 8H11v6l4.75 2.85.75-1.23-4-2.37V8zM12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" />
+                    </svg>
+                    Alarms
+                  </a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="./lights.html" class="c-nav__link">
+                    <svg class="c-nav__icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path d="M3.55 18.54l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8zM11 22.45h2V19.5h-2v2.95zM4 10.5H1v2h3v-2zm11-4.19V1.5H9v4.81C7.21 7.35 6 9.28 6 11.5c0 3.31 2.69 6 6 6s6-2.69 6-6c0-2.22-1.21-4.15-3-5.19zm5 4.19v2h3v-2h-3zm-2.76 7.66l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4z" />
+                    </svg>
+                    Lights
+                  </a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="./settings.html" class="c-nav__link">
+                    <svg class="c-nav__icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24">
+                      <g>
+                        <path d="M0,0h24v24H0V0z" fill="none" />
+                        <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+                      </g>
+                    </svg>
+                    Settings
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>
