@@ -1,3 +1,5 @@
+//Handy article I used to write this code: https://www.instructables.com/id/Bitbanging-step-by-step-Arduino-control-of-WS2811-/
+
 #define DATA_PIN 8
 #define NUM_LEDS 120
 #define NUM_BYTES (NUM_LEDS*3)
